@@ -24,6 +24,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.LottieAnimation
@@ -40,7 +41,7 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = Color.White
                 ) {
                     MainScreen()
                 }
@@ -51,7 +52,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen() {
-    val lottieComposition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.circledotlottie))
+    val lottieComposition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.clocklottiefiles))
     var isPlaying by remember { mutableStateOf(true) }
     val progress by animateLottieCompositionAsState(
         composition = lottieComposition,
